@@ -5,7 +5,7 @@ const path = require('path');
 
 // Feltételezzük, hogy a különböző routereket importálod
 // const userRoutes = require('./routes/userRoutes');
-// const poemRoutes = require('./routes/poemRoutes');
+const poemRoutes = require('./src/routes/poemRoutes');
 // const authRoutes = require('./routes/authRoutes');
 // const commentRoutes = require('./routes/commentRoutes');
 // const albumRoutes = require('./routes/albumRoutes');
@@ -48,10 +48,14 @@ app.get('/ujjweb/*', (req, res) => {
   res.sendFile(path.join(ujjwebBuildPath, 'index.html'));
 });
 
+
+poetryRouter.use('/poems', poemRoutes)
+
 app.use('/poetry', express.static(poetryBuildPath));
-app.get('/poetry/*', (req, res) => {
+app.get('/poetry/', (req, res) => {
   res.sendFile(path.join(poetryBuildPath, 'index.html'));
 });
+
 
 app.use('/ujjweb', ujjwebRouter);
 app.use('/poetry', poetryRouter);
