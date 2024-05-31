@@ -1,7 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Link, Route } from "react-router-dom";
-import Home from "./Home";
-import Contact from "./Contact";
+
+import Home from "./Pages/Home";
+import Contact from "./Pages/Contact";
+import CV from "./Pages/CV";
+import References from "./Pages/References";
+import About from "./Pages/About";
 
 const App = () => {
   return (
@@ -10,16 +14,28 @@ const App = () => {
         <nav>
           <ul>
             <li>
-              <Link to="/home">Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
               <Link to="/contact">Contact</Link>
             </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/cv">CV</Link>
+            </li>
+            <li>
+              <Link to="/references">References</Link>
+            </li>
           </ul>
         </nav>
         <Routes>
-          <Route path="/home" exact element={<Home></Home>} />
+          <Route path="/" exact element={<Home></Home>} />
           <Route path="/contact" element={<Contact></Contact>} />
+          <Route path="/about" element={<About></About>} />
+          <Route path="/cv" element={<CV></CV>} />
+          <Route path="/references" element={<References></References>} />
         </Routes>
       </div>
     </Router>
