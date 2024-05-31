@@ -16,28 +16,30 @@
 ## mese
     - 
 
-## Documentation
-### API
-    - poetryRouter
-        - prefix: __/poetry__
-        - routes:
-            - users
-                - GET
-                    - response: json
-                    - body: cors
-                - POST
-                    - response: ok, error
-                    - body: user data
-                - PUT
-                - DELETE
-            - poems
-            - auth
-            - comments
-            - albums
-            - follows
-            - labels
-    - ujjwebRouter
-        - prefix: __/ujjweb__
-        - routes:
-            - not yet
-    - meseRouter
+# API Documentation
+
+## poetryRouter
+- **Prefix**: `/poetry`
+- **Routes**:
+    ### Users
+    - **GET**
+        - **Response**: JSON
+        - **Body**: CORS
+    - **POST**
+        - **Response**: ok, error
+        - **Body**: User data
+    - **PUT**
+    - **DELETE**
+    ### Poems
+    ### Auth
+    ### Comments
+    ### Albums
+    ### Follows
+    ### Labels
+
+## ujjwebRouter
+- **Prefix**: `/ujjweb`
+- **Routes**:
+    ### Not yet available
+
+## meseRouter
