@@ -3,64 +3,67 @@ const session = require('express-session');
 const cors = require('cors');
 const path = require('path');
 
+const databases = require('./src/db');
+
+const poetryPool = databases.poetry;
+const ujjwebPool = databases.ujjweb;
+const sciencePool = databases.science;
+
 // Feltételezzük, hogy a különböző routereket importálod
-// const userRoutes = require('./routes/userRoutes');
-const poemRoutes = require('./src/routes/poemRoutes');
-// const authRoutes = require('./routes/authRoutes');
-// const commentRoutes = require('./routes/commentRoutes');
-// const albumRoutes = require('./routes/albumRoutes');
-// const followRoutes = require('./routes/followRoutes');
-// const labelRoutes = require('./routes/labelRoutes');
+const userRoutes = require('./src/routes/poetry/userRoutes');
+const poemRoutes = require('./src/routes/poetry/poemRoutes');
+const authRoutes = require('./src/routes/poetry/authRoutes');
+const commentRoutes = require('./src/routes/poetry/commentRoutes');
+const albumRoutes = require('./src/routes/poetry/albumRoutes');
+const followRoutes = require('./src/routes/poetry/followRoutes');
+const labelRoutes = require('./src/routes/poetry/labelRoutes');
+const ujjwebRoutes = require('./src/routes/ujjwebRoutes/ujjwebRoutes')
 
 const app = express();
 const ujjwebBuildPath = path.join(__dirname, 'ujjweb', 'build');
 const poetryBuildPath = path.join(__dirname, 'poetry', 'build');
 
 const corsOptions = {
-  origin: ['http://localhost:3000'], // Engedélyezett eredet
+  origin: ['http://localhost:3000'],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true, // Engedélyezd a cookie-k elküldését
+  credentials: true,
 };
 
 app.use(cors(corsOptions));
 
-// Session middleware
+
 app.use(session({
-  secret: 'your-secret-key', // Titkos kulcs a session-ök titkosításához
+  secret: 'your-secret-key',
   resave: false,
   saveUninitialized: true
 }));
 
-const poetryRouter = express.Router();
-const ujjwebRouter = express.Router();
-
-// ujjwebRouter.use('/users', userRoutes);
-// ujjwebRouter.use('/poems', poemRoutes);
-// ujjwebRouter.use('/auth', authRoutes);
-// ujjwebRouter.use('/comments', commentRoutes);
-// ujjwebRouter.use('/albums', albumRoutes);
-// ujjwebRouter.use('/follows', followRoutes);
-// ujjwebRouter.use('/labels', labelRoutes);
-
-// Az első React alkalmazás kiszolgálása a /app1 útvonalon
-app.use('/ujjweb', express.static(ujjwebBuildPath));
-app.get('/ujjweb/*', (req, res) => {
-  res.sendFile(path.join(ujjwebBuildPath, 'index.html'));
-});
 
 
-poetryRouter.use('/poems', poemRoutes)
 
 app.use('/poetry', express.static(poetryBuildPath));
 app.get('/poetry/', (req, res) => {
   res.sendFile(path.join(poetryBuildPath, 'index.html'));
 });
+app.use('/api/poetry/users', userRoutes);
+app.use('/api/poetry/poems', poemRoutes);
+app.use('/api/poetry/auth', authRoutes);
+app.use('/api/poetry/comments', commentRoutes);
+app.use('/api/poetry/albums', albumRoutes);
+app.use('/api/poetry/follows', followRoutes);
+app.use('/api/poetry/labels', labelRoutes);
 
 
-app.use('/ujjweb', ujjwebRouter);
-app.use('/poetry', poetryRouter);
 
-const PORT = process.env.PORT || 3000;
+app.use('/ujjweb', express.static(ujjwebBuildPath));
+app.get('/ujjweb/*', (req, res) => {
+  res.sendFile(path.join(ujjwebBuildPath, 'index.html'));
+});
+app.use('/api/ujjweb', ujjwebRoutes);
+
+
+
+const PORT = process.env.PORT || 3069;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
