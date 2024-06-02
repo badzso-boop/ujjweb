@@ -20,6 +20,7 @@ const labelRoutes = require('./src/routes/poetry/labelRoutes');
 const ujjwebRoutes = require('./src/routes/ujjwebRoutes/ujjwebRoutes')
 
 const app = express();
+app.use(express.json());
 const ujjwebBuildPath = path.join(__dirname, 'ujjweb', 'build');
 const poetryBuildPath = path.join(__dirname, 'poetry', 'build');
 

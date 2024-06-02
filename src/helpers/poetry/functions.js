@@ -1,4 +1,5 @@
-const pool = require('../../db');
+const databases = require('../../db');
+const pool = databases.poetry;
 const express = require('express');
 
 const Poem = require('../../models/poetry/poem');
