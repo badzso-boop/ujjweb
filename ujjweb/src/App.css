@@ -37,6 +37,9 @@
   }
 }
 
+body {
+  background-color: #1D3557;
+}
 
 .E63946 {
   color: #E63946;
@@ -56,4 +59,24 @@
 
 .C1D3557 {
   color: #1D3557;
+}
+
+.BG-E63946 {
+  background-color: #E63946;
+}
+
+.BG-F1FAEE {
+  background-color: #F1FAEE;
+}
+
+.BG-A8DADC {
+  background-color: #A8DADC;
+}
+
+.BG-C457B9D {
+  background-color: #457B9D;
+}
+
+.BG-C1D3557 {
+  background-color: #1D3557;
 }
