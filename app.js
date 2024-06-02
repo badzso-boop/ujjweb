@@ -40,12 +40,21 @@ app.use(session({
 }));
 
 
+app.use((req, res, next) => {
+  const host = req.headers.host;
 
-
-app.use('/poetry', express.static(poetryBuildPath));
-app.get('/poetry/', (req, res) => {
-  res.sendFile(path.join(poetryBuildPath, 'index.html'));
+  if (host === 'www.poetry.ujjweb.hu') {
+    return express.static(poetryBuildPath)(req, res, next);
+  }
+  
+  express.static(ujjwebBuildPath)(req, res, next);
 });
+
+
+// app.use('/poetry', express.static(poetryBuildPath));
+// app.get('/poetry/', (req, res) => {
+//   res.sendFile(path.join(poetryBuildPath, 'index.html'));
+// });
 app.use('/api/poetry/users', userRoutes);
 app.use('/api/poetry/poems', poemRoutes);
 app.use('/api/poetry/auth', authRoutes);
@@ -56,10 +65,10 @@ app.use('/api/poetry/labels', labelRoutes);
 
 
 
-app.use('/ujjweb', express.static(ujjwebBuildPath));
-app.get('/ujjweb/*', (req, res) => {
-  res.sendFile(path.join(ujjwebBuildPath, 'index.html'));
-});
+// app.use('/ujjweb', express.static(ujjwebBuildPath));
+// app.get('/ujjweb/*', (req, res) => {
+//   res.sendFile(path.join(ujjwebBuildPath, 'index.html'));
+// });
 app.use('/api/ujjweb', ujjwebRoutes);
 
 
