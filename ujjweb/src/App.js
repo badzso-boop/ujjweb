@@ -11,9 +11,9 @@ import Nav from "./Components/Navbar";
 
 const App = () => {
   return (
-    <div className="h-screen overflow-hidden p-3">
+    <div className="h-screen overflow-hidden p-2">
       <Router basename="/ujjweb">
-        <div className="flex flex-col h-full overflow-y-scroll">
+        <div className="flex flex-col h-full overflow-y-scroll no-gorgo">
           <Routes>
             <Route path="/" exact element={<Home />} />
             <Route path="/contact" element={<Contact />} />

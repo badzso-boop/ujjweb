@@ -5,7 +5,7 @@ import Tag from "../Components/Tag";
 
 const Home = () => {
   return (
-    <div>
+    <div className="mb-[70px]">
       <h1 className="mt-[50%] md:mt-[15%] text-4xl text-center">
         <Tag text="h1">
           <span className="font-bold">ujjweb.hu</span>

@@ -80,3 +80,13 @@ body {
 .BG-C1D3557 {
   background-color: #1D3557;
 }
+
+.no-gorgo::-webkit-scrollbar {
+  display: none;
+}
+.no-gorgo {
+  scrollbar-width: none;
+}
+.no-gorgo {
+  -ms-overflow-style: none;
+}
