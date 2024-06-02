@@ -6,12 +6,12 @@ import Tag from "../Components/Tag";
 const Home = () => {
   return (
     <div className="mb-[70px]">
-      <h1 className="mt-[50%] md:mt-[15%] text-4xl text-center">
+      <h1 className="mt-[40%] md:mt-[15%] text-3xl text-center">
         <Tag text="h1">
           <span className="font-bold">ujjweb.hu</span>
         </Tag>
       </h1>
-      <h4 className="text-xl mt-3 text-center">
+      <h4 className="text-md mt-3 text-center">
         <Tag text="h4">A pogramozás varázsa!</Tag>
       </h4>
 

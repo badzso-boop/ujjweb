@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import Tag from "../Components/Tag";
 import Progress from "../Components/ProgressBar";
@@ -30,7 +29,7 @@ const ABout = () => {
               <span className="E63946">="</span>
               Mosolygós fiú
               <span className="E63946">"{">"}</span>
-              <img src={norbiKep} className="rounded-xl w-3/4 m-auto mt-2" />
+              <img src={norbiKep} className="rounded-xl w-3/4 m-auto mt-2" alt="Mosolygós fiú" />
             </div>
           </div>
           <div class="lg:w-1/2 p-4">
