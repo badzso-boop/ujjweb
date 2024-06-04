@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import Tag from "./Tag";
 
@@ -20,9 +19,9 @@ const ReferenceCard = ({ kep, cim, leiras, link }) => {
         {leiras}
       </p>
       <div className="w-full text-center mt-3">
-        <Link className="w-50 p-2 m-2 rounded-xl m-auto BG-A8DADC text-black" to={`${link}`}>
+        <a className="w-50 p-2 m-2 rounded-xl m-auto BG-A8DADC text-black" href={`${link}`}>
           Bővebben
-        </Link>
+        </a>
       </div>
     </div>
   );

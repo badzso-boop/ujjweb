@@ -1,48 +1,42 @@
 import React from "react";
 
 import Tag from "../Components/Tag";
+import Progress from "../Components/ProgressBar";
 
-import norbiKep from "../img/norbi.jpeg";
-
-const ABout = () => {
+const Skillset = () => {
   return (
     <div className="mb-[70px]">
       <h1 className="mt-[15%] md:mt-[5%] text-4xl text-center">
         <Tag text="h1">
-          <span className="font-bold">Rólam</span>
+          <span className="font-bold">SKillset</span>
         </Tag>
       </h1>
 
       <div className="container mx-auto p-4">
         <div className="flex flex-col lg:flex-row items-center lg:items-start">
           <div className="lg:w-1/2 p-4">
-            <div className="text-center text-xl">
-              <span className="E63946">{"<"}</span>
-              <span className="A8DADC">img</span>
-              <span className="E63946"> </span>
-              <span className="A8DADC">src</span>
-              <span className="E63946">="</span>
-              norbi.png
-              <span className="E63946">" </span>
-              <span className="A8DADC">alt</span>
-              <span className="E63946">="</span>
-              Mosolygós fiú
-              <span className="E63946">"{">"}</span>
-              <img src={norbiKep} className="rounded-xl w-3/4 m-auto mt-2" alt="Mosolygós fiú" />
+            <div className="text-center text-xl py-3 sm:py-20">
+              <div className="w-75 text-center mx-auto flex flex-column">
+                <Progress text="React.js" percent="95%"></Progress>
+                <Progress text="Node.js" percent="85%"></Progress>
+                <Progress text="PHP" percent="87%"></Progress>
+                <Progress text="C#" percent="90%"></Progress>
+                <Progress text="SQL" percent="79%"></Progress>
+              </div>
             </div>
           </div>
           <div className="lg:w-1/2 p-4">
-            <div className="py-6 sm:py-40">
+            <div className="py-3 sm:py-20">
               <div className="mx-auto max-w-7xl">
                 <div className="mx-auto max-w-2xl lg:max-w-4xl">
                   <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
                     <div className="relative pl-16">
                       <dt className="text-base font-semibold leading-7">
                         <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg BG-C457B9D">
-                          <i className="fa-solid fa-user"></i>
+                          <i class="fa-brands fa-react"></i>
                         </div>
                         <Tag text="h4">
-                          <span className="font-bold">Személyiségem</span>
+                          <span className="font-bold">React.js</span>
                         </Tag>
                       </dt>
                       <dd className="mt-2 text-base leading-7">
@@ -53,10 +47,10 @@ const ABout = () => {
                     <div className="relative pl-16">
                       <dt className="text-base font-semibold leading-7">
                         <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg BG-C457B9D">
-                          <i className="fa-solid fa-wand-magic-sparkles"></i>
+                          <i class="fa-brands fa-node-js"></i>
                         </div>
                         <Tag text="h4">
-                          <span className="font-bold">Önkénteskedés</span>
+                          <span className="font-bold">Node.js</span>
                         </Tag>
                       </dt>
                       <dd className="mt-2 text-base leading-7">
@@ -71,7 +65,7 @@ const ABout = () => {
                           <i className="fa-solid fa-code"></i>
                         </div>
                         <Tag text="h4">
-                          <span className="font-bold">Programozás</span>
+                          <span className="font-bold">C#</span>
                         </Tag>
                       </dt>
                       <dd className="mt-2 text-base leading-7">
@@ -82,10 +76,10 @@ const ABout = () => {
                     <div className="relative pl-16">
                       <dt className="text-base font-semibold leading-7">
                         <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg BG-C457B9D">
-                          <i className="fa-solid fa-comments"></i>
+                          <i class="fa-brands fa-php"></i>
                         </div>
                         <Tag text="h4">
-                          <span className="font-bold">Közösség</span>
+                          <span className="font-bold">PHP</span>
                         </Tag>
                       </dt>
                       <dd className="mt-2 text-base leading-7">
@@ -101,8 +95,31 @@ const ABout = () => {
           </div>
         </div>
       </div>
+
+      <div className="w-75 m-auto p-3 border">
+        <h1 className="text-2xl">
+          <Tag text="h1">
+            <span className="font-bold">Tudásom</span>
+          </Tag>
+        </h1>
+        <p className="mt-2">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+          mollitia, molestiae quas vel sint commodi repudiandae consequuntur
+          voluptatum laborum numquam blanditiis harum quisquam eius sed odit
+          fugiat iusto fuga praesentium optio, eaque rerum! Provident similique
+          accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut
+          molestias architecto voluptate aliquam nihil, eveniet aliquid culpa
+          officia aut! Impedit sit sunt quaerat, odit, tenetur error, harum
+          nesciunt ipsum debitis quas aliquid. Reprehenderit, quia. Quo neque
+          error repudiandae fuga? Ipsa laudantium molestias eos sapiente
+          officiis modi at sunt excepturi expedita sint? Sed quibusdam
+          recusandae alias error harum maxime adipisci amet laborum.
+          Perspiciatis minima nesciunt dolorem! Officiis iure rerum voluptates a
+          cumque velit
+        </p>
+      </div>
     </div>
   );
 };
 
-export default ABout;
+export default Skillset;

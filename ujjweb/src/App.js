@@ -6,6 +6,7 @@ import Contact from "./Pages/Contact";
 import CV from "./Pages/CV";
 import References from "./Pages/References";
 import About from "./Pages/About";
+import Skillset from "./Pages/Skillset";
 
 import Nav from "./Components/Navbar";
 
@@ -20,6 +21,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/cv" element={<CV />} />
             <Route path="/references" element={<References />} />
+            <Route path="/skillset" element={<Skillset />} />
           </Routes>
           <Nav />
         </div>
