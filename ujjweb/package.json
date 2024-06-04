@@ -2,6 +2,7 @@
   "name": "ujjweb",
   "version": "0.1.0",
   "homepage": "http://localhost:3069/ujjweb",
+  "proxy": "http://localhost:3069/api/ujjweb",
   "private": true,
   "dependencies": {
     "@fortawesome/react-fontawesome": "^0.2.2",
