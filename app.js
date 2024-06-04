@@ -41,18 +41,6 @@ app.use(session({
   saveUninitialized: true
 }));
 
-
-// app.use((req, res, next) => {
-//   const host = req.headers.host;
-
-//   if (host === 'www.poetry.ujjweb.hu') {
-//     return express.static(poetryBuildPath)(req, res, next);
-//   }
-  
-//   express.static(ujjwebBuildPath)(req, res, next);
-// });
-
-
 app.use('/poetry', express.static(poetryBuildPath));
 app.get('/poetry/', (req, res) => {
   res.sendFile(path.join(poetryBuildPath, 'index.html'));

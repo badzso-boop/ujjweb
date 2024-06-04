@@ -8,7 +8,7 @@ const References = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3069/api/ujjweb/projects", {withCredentials: true});
+        const response = await axios.get("http://127.0.0.1:3069/api/ujjweb/projects", {withCredentials: true});
         setProjects(response.data);
       } catch (error) {
         console.error("Error fetching projects:", error);
