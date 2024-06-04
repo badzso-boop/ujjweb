@@ -27,7 +27,7 @@ const ujjwebBuildPath = path.join(__dirname, 'ujjweb', 'build');
 const poetryBuildPath = path.join(__dirname, 'poetry', 'build');
 
 const corsOptions = {
-  origin: ['http://ujjweb.hu/poetry', 'http://www.ujjweb.hu/ujjweb', 'http://185.43.207.13:3069/', 'http://www.ujjweb.hu', 'http://185.43.207.13:3069/api/*', 'http://ujjweb.hu'],
+  origin: ['http://ujjweb.hu/poetry', 'http://www.ujjweb.hu/ujjweb', 'http://185.43.207.13:3069/', 'http://www.ujjweb.hu', 'http://185.43.207.13:3069/api/*', 'http://ujjweb.hu', 'http://localhost:3069', 'http://127.0.0.1:3069'],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 };
