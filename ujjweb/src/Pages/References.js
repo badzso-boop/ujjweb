@@ -8,7 +8,7 @@ const References = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/projects", {
+        const response = await fetch("http://localhost:3069/api/ujjweb/projects", {
           credentials: 'include',
           method: 'GET'
         });
