@@ -20,7 +20,7 @@ export const AppProvider = ({ children }) => {
     try {
       const apiUrl = process.env.REACT_APP_API_URL;
       
-      const response = await axios.get(`http://localhost:3069/api/poetry/poems`, { withCredentials: true });
+      const response = await axios.get(`${apiUrl}/poems`, { withCredentials: true });
       setPoems(response.data);
     } catch (error) {
       console.error('Error fetching poems:', error.message);
