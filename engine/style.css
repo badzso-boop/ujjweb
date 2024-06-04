@@ -1,0 +1,127 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.slider-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.motor {
+    position: relative;
+}
+
+.motor-body {
+    width: 120px;
+    height: 100px;
+    border: 2px solid black;
+    border-top: none;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.top-left-rectangle,
+.top-right-rectangle {
+    position: absolute;
+    width: 50px;
+    height: 100px;
+}
+
+.rectangle {
+    border: 2px solid black;
+}
+
+.top-left-rectangle {
+    top: -75px;
+    left: -25px;
+    transform: rotate(-40deg);
+}
+
+.top-right-rectangle {
+    top: -75px;
+    right: -25px;
+    transform: rotate(40deg);
+}
+
+.center-circle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: conic-gradient(gray 0deg 180deg, white 180deg 360deg);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate360 0.6s infinite linear;
+}
+
+@keyframes rotate360 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+.piston-rod {
+    width: 15px;
+    height: 75px;
+    background-color: grey;
+    position: absolute;
+    top: 125px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.piston-rod.left {
+    animation: moveLeftUpDown 0.6s infinite linear;
+}
+
+.piston-rod.right {
+    animation: moveRightUpDown 0.6s infinite linear;
+}
+
+
+.piston {
+    width: 48px;
+    height: 30px;
+    background-color: black;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.piston.left {
+    animation: moveLeftUpDown 0.6s infinite linear;
+}
+
+.piston.right {
+    animation: moveRightUpDown 0.6s infinite linear;
+}
+
+@keyframes moveLeftUpDown {
+    0%, 100% {
+        transform: translate(-50%, -50%) translateY(0px);
+    }
+    50% {
+        transform: translate(-50%, -50%) translateY(-60px);
+    }
+}
+
+@keyframes moveRightUpDown {
+    0%, 100% {
+        transform: translate(-50%, -50%) translateY(-60px);
+    }
+    50% {
+        transform: translate(-50%, -50%) translateY(0px);
+    }
+}
