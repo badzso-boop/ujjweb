@@ -1,17 +1,31 @@
-// src/routes/ujjwebRoutes.js
 const express = require('express');
 const router = express.Router();
 const databases = require('../../db');
 const pool = databases.ujjweb;
 
-// Például egy GET kérés kezelése a /projects útvonalon
+// Example GET request handler for /projects route
 router.get('/projects', async (req, res) => {
   try {
-    const [rows] = await pool.query('SELECT * FROM projects');
+    // Specify needed columns (replace with actual columns if needed)
+    const [rows] = await pool.query('SELECT id, name, description FROM projects');
     res.json(rows);
   } catch (err) {
-    console.error("Valami hiba:", err);
-    res.status(500).send('Server Error');
+    console.error("Error fetching projects:", err);
+    let errorMessage = 'Server Error'; // Default message
+
+    switch (err.code) {
+      case 'ER_DUP_ENTRY':
+        errorMessage = 'Duplicate entry found.';
+        break;
+      case 'ER_NO_DATA_FOUND':
+        errorMessage = 'No projects found.';
+        break;
+      // Add more cases for specific error codes
+      default:
+        // Handle other errors
+    }
+
+    res.status(500).send(errorMessage);
   }
 });
 
