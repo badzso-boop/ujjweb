@@ -8,6 +8,7 @@ router.get('/projects', async (req, res) => {
   try {
     // Specify needed columns (replace with actual columns if needed)
     const [rows] = await pool.query('SELECT id, name, description FROM projects');
+    console.log(rows)
     res.json(rows);
   } catch (err) {
     console.error("Error fetching projects:", err);
