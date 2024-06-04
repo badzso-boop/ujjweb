@@ -25,12 +25,22 @@ const Home = () => {
           </Tag>
         </Link>
 
+
         <Link
-          to="/cv"
+          to="/references"
           className="flex w-[100px] h-[100px] m-4 text-center BG-C457B9D rounded-md"
         >
           <Tag text="button" multiline={true}>
-            Önéletrajz
+            Referenciák
+          </Tag>
+        </Link>
+
+        <Link
+          to="/skillset"
+          className="flex w-[100px] h-[100px] m-4 text-center BG-C457B9D rounded-md"
+        >
+          <Tag text="button" multiline={true}>
+            Skillset
           </Tag>
         </Link>
 
@@ -42,20 +52,6 @@ const Home = () => {
             Kapcsolat
           </Tag>
         </Link>
-        <Link
-          to="/references"
-          className="flex w-[100px] h-[100px] m-4 text-center BG-C457B9D rounded-md"
-        >
-          <Tag text="button" multiline={true}>
-            Referenciák
-          </Tag>
-        </Link>
-
-        <div className="flex w-[100px] h-[100px] m-4 text-center BG-C457B9D rounded-md">
-          <Tag text="button" multiline={true}>
-            Skillset????
-          </Tag>
-        </div>
       </div>
     </div>
   );

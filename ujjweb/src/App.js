@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./Pages/Home";
 import Contact from "./Pages/Contact";
-import CV from "./Pages/CV";
 import References from "./Pages/References";
 import About from "./Pages/About";
 import Skillset from "./Pages/Skillset";
@@ -19,7 +18,6 @@ const App = () => {
             <Route path="/" exact element={<Home />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
-            <Route path="/cv" element={<CV />} />
             <Route path="/references" element={<References />} />
             <Route path="/skillset" element={<Skillset />} />
           </Routes>

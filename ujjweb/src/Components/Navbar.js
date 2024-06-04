@@ -15,9 +15,6 @@ const Nav = () => {
       <Link to="/references">
         <i className="m-3 text-2xl fa-solid fa-code"></i>
       </Link>
-      <Link to="/cv">
-        <i className="m-3 text-2xl fa-solid fa-folder-open"></i>
-      </Link>
       <Link to="/skillset">
         <i className="m-3 text-2xl fa-solid fa-sliders"></i>
       </Link>

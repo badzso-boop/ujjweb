@@ -8,23 +8,12 @@ const Skillset = () => {
     <div className="mb-[70px]">
       <h1 className="mt-[15%] md:mt-[5%] text-4xl text-center">
         <Tag text="h1">
-          <span className="font-bold">SKillset</span>
+          <span className="font-bold">Skillset</span>
         </Tag>
       </h1>
 
       <div className="container mx-auto p-4">
         <div className="flex flex-col lg:flex-row items-center lg:items-start">
-          <div className="lg:w-1/2 p-4">
-            <div className="text-center text-xl py-3 sm:py-20">
-              <div className="w-75 text-center mx-auto flex flex-column">
-                <Progress text="React.js" percent="95%"></Progress>
-                <Progress text="Node.js" percent="85%"></Progress>
-                <Progress text="PHP" percent="87%"></Progress>
-                <Progress text="C#" percent="90%"></Progress>
-                <Progress text="SQL" percent="79%"></Progress>
-              </div>
-            </div>
-          </div>
           <div className="lg:w-1/2 p-4">
             <div className="py-3 sm:py-20">
               <div className="mx-auto max-w-7xl">
@@ -93,30 +82,87 @@ const Skillset = () => {
               </div>
             </div>
           </div>
+          <div className="w-50">
+            <div className="text-center text-xl py-3 sm:py-20">
+              <div className="w-75 text-center mx-auto flex flex-column">
+                <Progress text="React.js" percent="95%"></Progress>
+                <Progress text="Node.js" percent="85%"></Progress>
+                <Progress text="PHP" percent="87%"></Progress>
+                <Progress text="C#" percent="90%"></Progress>
+                <Progress text="SQL" percent="79%"></Progress>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="w-75 m-auto p-3 border">
-        <h1 className="text-2xl">
-          <Tag text="h1">
-            <span className="font-bold">Tudásom</span>
-          </Tag>
-        </h1>
-        <p className="mt-2">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-          mollitia, molestiae quas vel sint commodi repudiandae consequuntur
-          voluptatum laborum numquam blanditiis harum quisquam eius sed odit
-          fugiat iusto fuga praesentium optio, eaque rerum! Provident similique
-          accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut
-          molestias architecto voluptate aliquam nihil, eveniet aliquid culpa
-          officia aut! Impedit sit sunt quaerat, odit, tenetur error, harum
-          nesciunt ipsum debitis quas aliquid. Reprehenderit, quia. Quo neque
-          error repudiandae fuga? Ipsa laudantium molestias eos sapiente
-          officiis modi at sunt excepturi expedita sint? Sed quibusdam
-          recusandae alias error harum maxime adipisci amet laborum.
-          Perspiciatis minima nesciunt dolorem! Officiis iure rerum voluptates a
-          cumque velit
-        </p>
+      <h1 className="mt-[15%] md:mt-[5%] text-3xl text-center">
+        <Tag text="h1">
+          <span className="font-bold">Önéletrajz</span>
+        </Tag>
+      </h1>
+      <div className="flex flex-col w-75 mx-auto">
+        <div className="lg:w-50">
+          <div className="flex-wrap flex mx-auto justify-center">
+            <a
+              href="http://ujjweb.hu/ujjweb/files/ujj_norbert_oneletrajz.pdf"
+              className="flex w-[100px] h-[100px] m-4 text-center BG-C457B9D rounded-md"
+            >
+              <Tag text="button" multiline={true}>
+                Magyar önéletrajz
+              </Tag>
+            </a>
+
+            <a
+              href="http://ujjweb.hu/ujjweb/files/ujj_norbert_cv.pdf"
+              className="flex w-[100px] h-[100px] m-4 text-center BG-C457B9D rounded-md"
+            >
+              <Tag text="button" multiline={true}>
+                CV
+              </Tag>
+            </a>
+
+            <a
+              href="http://ujjweb.hu/ujjweb/files/ujj_norbert_motivacios_level.pdf"
+              className="flex w-[100px] h-[100px] m-4 text-center BG-C457B9D rounded-md"
+            >
+              <Tag text="button" multiline={true}>
+                Motivációs levél
+              </Tag>
+            </a>
+
+            <a
+              href="http://ujjweb.hu/ujjweb/files/ujj_norbert_cover_letter.pdf"
+              className="flex w-[100px] h-[100px] m-4 text-center BG-C457B9D rounded-md"
+            >
+              <Tag text="button" multiline={true}>
+                Cover letter
+              </Tag>
+            </a>
+          </div>
+        </div>
+        <div className="lg:w-50 m-auto p-3">
+          <h1 className="text-2xl">
+            <Tag text="h1">
+              <span className="font-bold">Tudásom</span>
+            </Tag>
+          </h1>
+          <p className="mt-2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+            mollitia, molestiae quas vel sint commodi repudiandae consequuntur
+            voluptatum laborum numquam blanditiis harum quisquam eius sed odit
+            fugiat iusto fuga praesentium optio, eaque rerum! Provident
+            similique accusantium nemo autem. Veritatis obcaecati tenetur iure
+            eius earum ut molestias architecto voluptate aliquam nihil, eveniet
+            aliquid culpa officia aut! Impedit sit sunt quaerat, odit, tenetur
+            error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
+            quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias
+            eos sapiente officiis modi at sunt excepturi expedita sint? Sed
+            quibusdam recusandae alias error harum maxime adipisci amet laborum.
+            Perspiciatis minima nesciunt dolorem! Officiis iure rerum voluptates
+            a cumque velit
+          </p>
+        </div>
       </div>
     </div>
   );
