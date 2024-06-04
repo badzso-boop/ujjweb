@@ -8,16 +8,25 @@ const References = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const apiUrl = process.env.REACT_APP_API_URL;
-        const response = await axios.get(`${apiUrl}/projects`, { withCredentials: true });
-        setProjects(response.data);
+        const response = await fetch("/projects", {
+          credentials: 'include',
+          method: 'GET'
+        });
+  
+        if (!response.ok) {
+          throw new Error(`Error fetching projects: ${response.statusText}`);
+        }
+  
+        const data = await response.json();
+        setProjects(data);
       } catch (error) {
         console.error("Error fetching projects:", error);
       }
     };
-
+  
     fetchData();
   }, []);
+  
 
   return (
     <div className="mb-[70px]">
