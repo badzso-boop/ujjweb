@@ -16,19 +16,19 @@ const createPool = (config) => {
 // Adatbázis konfigurációk
 const databases = {
   poetry: createPool({
-    host: 'localhost',
+    host: '127.0.0.1',
     user: 'root',
     password: process.env.DB_PASSWORD,
     database: 'poetry'
   }),
   ujjweb: createPool({
-    host: 'localhost',
+    host: '127.0.0.1',
     user: 'root',
     password: process.env.DB_PASSWORD,
     database: 'ujjweb'
   }),
   science: createPool({
-    host: 'localhost',
+    host: '127.0.0.1',
     user: 'root',
     password: process.env.DB_PASSWORD,
     database: 'science'
