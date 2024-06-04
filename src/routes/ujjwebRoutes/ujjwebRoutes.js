@@ -8,7 +8,7 @@ const ujjwebPool = databases.ujjweb;
 // Például egy GET kérés kezelése a /projects útvonalon
 router.get('/projects', async (req, res) => {
   try {
-    const [rows] = await ujjwebPool.query('SELECT * FROM projektek');
+    const [rows] = await ujjwebPool.query('SELECT * FROM projects');
     res.json(rows);
   } catch (err) {
     console.error(err);
