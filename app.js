@@ -25,7 +25,7 @@ const ujjwebBuildPath = path.join(__dirname, 'ujjweb', 'build');
 const poetryBuildPath = path.join(__dirname, 'poetry', 'build');
 
 const corsOptions = {
-  origin: ['http://185.43.207.13', 'http://poetry.ujjweb.hu'],
+  origin: ['http://poetry.ujjweb.hu', 'http://www.ujjweb.hu'],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 };
