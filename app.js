@@ -57,8 +57,8 @@ app.use('/api/poetry/labels', labelRoutes);
 
 
 
-app.use('/', express.static(ujjwebBuildPath));
-app.get('/*', (req, res) => {
+app.use('/ujjweb', express.static(ujjwebBuildPath));
+app.get('/ujjweb/*', (req, res) => {
   res.sendFile(path.join(ujjwebBuildPath, 'index.html'));
 });
 app.use('/api/ujjweb', ujjwebRoutes);
