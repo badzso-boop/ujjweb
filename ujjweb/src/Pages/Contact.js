@@ -1,14 +1,16 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 
 import Tag from "../Components/Tag";
 import InputTag from "../Components/InputTag";
 
 const Contact = () => {
+  const { t } = useTranslation();
   return (
     <div className="mb-[70px]">
       <h1 className="mt-[15%] md:mt-[5%] text-3xl text-center">
         <Tag text="h1">
-          <span className="font-bold">Kapcsolat</span>
+          <span className="font-bold">{t("c_title")}</span>
         </Tag>
       </h1>
 
@@ -16,7 +18,7 @@ const Contact = () => {
         <div className="my-3 flex flex-col">
           <div className="w-[90%] m-auto">
             <span>
-              <InputTag type="text" placeholder="Feladó"></InputTag>
+              <InputTag type="text" placeholder={t("placeholder1")}></InputTag>
             </span>
             <input
               type="text"
@@ -29,7 +31,7 @@ const Contact = () => {
         <div className="my-3 flex flex-col">
           <div className="w-[90%] m-auto">
             <span>
-              <InputTag type="text" placeholder="Tárgy"></InputTag>
+              <InputTag type="text" placeholder={t("placeholder2")}></InputTag>
             </span>
             <input
               type="text"
@@ -42,7 +44,7 @@ const Contact = () => {
         <div className="my-3 flex flex-col">
           <div className="w-[90%] m-auto">
             <span className="text-left">
-              <InputTag type="textarea" placeholder="Üzenet"></InputTag>
+              <InputTag type="textarea" placeholder={t("placeholder3")}></InputTag>
             </span>
             <textarea
               type="textarea"
@@ -65,7 +67,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <Tag text="h4">
-                        <span className="font-bold">Telefon:</span>
+                        <span className="font-bold">{t("c_mobile")}</span>
                       </Tag>
                       <br />
                       <span>
@@ -83,7 +85,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <Tag text="h4">
-                        <span className="font-bold">Email:</span>
+                        <span className="font-bold">{t("c_mail")}</span>
                       </Tag>
                       <br />
                       <span>

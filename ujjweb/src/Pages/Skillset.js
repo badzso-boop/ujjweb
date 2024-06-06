@@ -1,14 +1,16 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import Tag from "../Components/Tag";
 import Progress from "../Components/ProgressBar";
 
 const Skillset = () => {
+  const { t } = useTranslation();
   return (
     <div className="mb-[70px]">
       <h1 className="mt-[15%] md:mt-[5%] text-4xl text-center">
         <Tag text="h1">
-          <span className="font-bold">Skillset</span>
+          <span className="font-bold">{t("main_title")}</span>
         </Tag>
       </h1>
 
@@ -29,8 +31,7 @@ const Skillset = () => {
                         </Tag>
                       </dt>
                       <dd className="mt-2 text-base leading-7">
-                        Morbi viverra dui mi arcu sed. Tellus semper adipiscing
-                        suspendisse semper morbi. Odio urna massa nunc massa.
+                        {t("react_text")}
                       </dd>
                     </div>
                     <div className="relative pl-16">
@@ -43,9 +44,7 @@ const Skillset = () => {
                         </Tag>
                       </dt>
                       <dd className="mt-2 text-base leading-7">
-                        Sit quis amet rutrum tellus ullamcorper ultricies libero
-                        dolor eget. Sem sodales gravida quam turpis enim lacus
-                        amet.
+                        {t("node_text")}
                       </dd>
                     </div>
                     <div className="relative pl-16">
@@ -58,8 +57,7 @@ const Skillset = () => {
                         </Tag>
                       </dt>
                       <dd className="mt-2 text-base leading-7">
-                        Quisque est vel vulputate cursus. Risus proin diam nunc
-                        commodo. Lobortis auctor congue commodo diam neque.
+                        {t("c#_text")}
                       </dd>
                     </div>
                     <div className="relative pl-16">
@@ -72,9 +70,7 @@ const Skillset = () => {
                         </Tag>
                       </dt>
                       <dd className="mt-2 text-base leading-7">
-                        Arcu egestas dolor vel iaculis in ipsum mauris.
-                        Tincidunt mattis aliquet hac quis. Id hac maecenas ac
-                        donec pharetra eget.
+                        {t("php_text")}
                       </dd>
                     </div>
                   </dl>
@@ -98,7 +94,7 @@ const Skillset = () => {
 
       <h1 className="mt-[15%] md:mt-[5%] text-3xl text-center">
         <Tag text="h1">
-          <span className="font-bold">Önéletrajz</span>
+          <span className="font-bold">{t("cv_title")}</span>
         </Tag>
       </h1>
       <div className="flex flex-col w-75 mx-auto">
@@ -109,7 +105,7 @@ const Skillset = () => {
               className="flex w-[100px] h-[100px] m-4 text-center BG-C457B9D rounded-md"
             >
               <Tag text="button" multiline={true}>
-                Magyar önéletrajz
+                {t("cv_hun")}
               </Tag>
             </a>
 
@@ -118,7 +114,7 @@ const Skillset = () => {
               className="flex w-[100px] h-[100px] m-4 text-center BG-C457B9D rounded-md"
             >
               <Tag text="button" multiline={true}>
-                CV
+                {t("cv_eng")}
               </Tag>
             </a>
 
@@ -127,7 +123,7 @@ const Skillset = () => {
               className="flex w-[100px] h-[100px] m-4 text-center BG-C457B9D rounded-md"
             >
               <Tag text="button" multiline={true}>
-                Motivációs levél
+                {t("cover_letter_hun")}
               </Tag>
             </a>
 
@@ -136,7 +132,7 @@ const Skillset = () => {
               className="flex w-[100px] h-[100px] m-4 text-center BG-C457B9D rounded-md"
             >
               <Tag text="button" multiline={true}>
-                Cover letter
+                {t("cover_letter_eng")}
               </Tag>
             </a>
           </div>
@@ -144,24 +140,10 @@ const Skillset = () => {
         <div className="lg:w-50 m-auto p-3">
           <h1 className="text-2xl">
             <Tag text="h1">
-              <span className="font-bold">Tudásom</span>
+              <span className="font-bold">{t("knowlegde_title")}</span>
             </Tag>
           </h1>
-          <p className="mt-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-            mollitia, molestiae quas vel sint commodi repudiandae consequuntur
-            voluptatum laborum numquam blanditiis harum quisquam eius sed odit
-            fugiat iusto fuga praesentium optio, eaque rerum! Provident
-            similique accusantium nemo autem. Veritatis obcaecati tenetur iure
-            eius earum ut molestias architecto voluptate aliquam nihil, eveniet
-            aliquid culpa officia aut! Impedit sit sunt quaerat, odit, tenetur
-            error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
-            quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias
-            eos sapiente officiis modi at sunt excepturi expedita sint? Sed
-            quibusdam recusandae alias error harum maxime adipisci amet laborum.
-            Perspiciatis minima nesciunt dolorem! Officiis iure rerum voluptates
-            a cumque velit
-          </p>
+          <p className="mt-2">{t("knowledge_text")}</p>
         </div>
       </div>
     </div>

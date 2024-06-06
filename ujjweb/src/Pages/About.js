@@ -1,10 +1,12 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import Tag from "../Components/Tag";
 
 import norbiKep from "../img/norbi.jpeg";
 
 const ABout = () => {
+  const { t } = useTranslation();
   return (
     <div className="mb-[70px]">
       <h1 className="mt-[15%] md:mt-[5%] text-4xl text-center">
@@ -26,9 +28,13 @@ const ABout = () => {
               <span className="E63946">" </span>
               <span className="A8DADC">alt</span>
               <span className="E63946">="</span>
-              Mosolygós fiú
+              {t("img_text")}
               <span className="E63946">"{">"}</span>
-              <img src={norbiKep} className="rounded-xl w-3/4 m-auto mt-2" alt="Mosolygós fiú" />
+              <img
+                src={norbiKep}
+                className="rounded-xl w-3/4 m-auto mt-2"
+                alt="Mosolygós fiú"
+              />
             </div>
           </div>
           <div className="lg:w-1/2 p-4">
@@ -42,28 +48,21 @@ const ABout = () => {
                           <i className="fa-solid fa-user"></i>
                         </div>
                         <Tag text="h4">
-                          <span className="font-bold">Személyiségem</span>
+                          <span className="font-bold">{t("title1")}</span>
                         </Tag>
                       </dt>
-                      <dd className="mt-2 text-base leading-7">
-                        Morbi viverra dui mi arcu sed. Tellus semper adipiscing
-                        suspendisse semper morbi. Odio urna massa nunc massa.
-                      </dd>
+                      <dd className="mt-2 text-base leading-7">{t("text1")}</dd>
                     </div>
                     <div className="relative pl-16">
                       <dt className="text-base font-semibold leading-7">
                         <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg BG-C457B9D">
-                          <i className="fa-solid fa-wand-magic-sparkles"></i>
+                        <i class="fa-solid fa-book"></i>
                         </div>
                         <Tag text="h4">
-                          <span className="font-bold">Önkénteskedés</span>
+                          <span className="font-bold">{t("title2")}</span>
                         </Tag>
                       </dt>
-                      <dd className="mt-2 text-base leading-7">
-                        Sit quis amet rutrum tellus ullamcorper ultricies libero
-                        dolor eget. Sem sodales gravida quam turpis enim lacus
-                        amet.
-                      </dd>
+                      <dd className="mt-2 text-base leading-7">{t("text2")}</dd>
                     </div>
                     <div className="relative pl-16">
                       <dt className="text-base font-semibold leading-7">
@@ -71,13 +70,10 @@ const ABout = () => {
                           <i className="fa-solid fa-code"></i>
                         </div>
                         <Tag text="h4">
-                          <span className="font-bold">Programozás</span>
+                          <span className="font-bold">{t("title3")}</span>
                         </Tag>
                       </dt>
-                      <dd className="mt-2 text-base leading-7">
-                        Quisque est vel vulputate cursus. Risus proin diam nunc
-                        commodo. Lobortis auctor congue commodo diam neque.
-                      </dd>
+                      <dd className="mt-2 text-base leading-7">{t("text3")}</dd>
                     </div>
                     <div className="relative pl-16">
                       <dt className="text-base font-semibold leading-7">
@@ -85,14 +81,10 @@ const ABout = () => {
                           <i className="fa-solid fa-comments"></i>
                         </div>
                         <Tag text="h4">
-                          <span className="font-bold">Közösség</span>
+                          <span className="font-bold">{t("title4")}</span>
                         </Tag>
                       </dt>
-                      <dd className="mt-2 text-base leading-7">
-                        Arcu egestas dolor vel iaculis in ipsum mauris.
-                        Tincidunt mattis aliquet hac quis. Id hac maecenas ac
-                        donec pharetra eget.
-                      </dd>
+                      <dd className="mt-2 text-base leading-7">{t("text4")}</dd>
                     </div>
                   </dl>
                 </div>

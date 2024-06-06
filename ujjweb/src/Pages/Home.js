@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import Tag from "../Components/Tag";
 
 const Home = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="mb-[70px]">
       <h1 className="mt-[40%] md:mt-[15%] text-3xl text-center">
@@ -12,7 +15,7 @@ const Home = () => {
         </Tag>
       </h1>
       <h4 className="text-md mt-3 text-center">
-        <Tag text="h4">A pogramozás varázsa!</Tag>
+        <Tag text="h4">{t("motto")}</Tag>
       </h4>
 
       <div className="flex-wrap flex mx-auto justify-center">
@@ -21,17 +24,16 @@ const Home = () => {
           className="flex w-[100px] h-[100px] m-4 text-center BG-C457B9D rounded-md"
         >
           <Tag text="button" multiline={true}>
-            Rólam
+            {t("about_title")}
           </Tag>
         </Link>
-
 
         <Link
           to="/references"
           className="flex w-[100px] h-[100px] m-4 text-center BG-C457B9D rounded-md"
         >
           <Tag text="button" multiline={true}>
-            Referenciák
+            {t("references_title")}
           </Tag>
         </Link>
 
@@ -40,7 +42,7 @@ const Home = () => {
           className="flex w-[100px] h-[100px] m-4 text-center BG-C457B9D rounded-md"
         >
           <Tag text="button" multiline={true}>
-            Skillset
+            {t("skillset_title")}
           </Tag>
         </Link>
 
@@ -49,7 +51,7 @@ const Home = () => {
           className="flex w-[100px] h-[100px] m-4 text-center BG-C457B9D rounded-md"
         >
           <Tag text="button" multiline={true}>
-            Kapcsolat
+            {t("contact_title")}
           </Tag>
         </Link>
       </div>
