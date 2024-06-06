@@ -57,8 +57,8 @@ app.use('/api/poetry/labels', labelRoutes);
 
 
 
-app.use('/ujjweb', express.static(ujjwebBuildPath));
-app.get('/ujjweb/*', (req, res) => {
+app.use('/', express.static(ujjwebBuildPath));
+app.get('/*', (req, res) => {
   res.sendFile(path.join(ujjwebBuildPath, 'index.html'));
 });
 app.use('/api/ujjweb', ujjwebRoutes);
@@ -67,6 +67,10 @@ app.use('/api/ujjweb', ujjwebRoutes);
 app.use('/engine', express.static(engineBuildPath));
 app.get('/engine/', (req, res) => {
   res.sendFile(path.join(engineBuildPath, 'index.html'));
+});
+
+app.get('/ujjandujj/', (req, res) => {
+  res.redirect('http://185.43.207.13/ujjandujj');
 });
 
 const PORT = process.env.PORT || 3069;
