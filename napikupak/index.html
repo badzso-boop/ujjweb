@@ -36,5 +36,23 @@
     <button onclick="subscribe()">Engedélyezem az értesítéseket</button>
   </div>
   
+
+  <script>
+    window.OneSignal = window.OneSignal || [];
+    OneSignal.push(function () {
+      OneSignal.init({
+        appId: "4c5848a1-f752-44b6-8af6-924993cbc90a",
+        notifyButton: {
+          enable: true,
+        },
+      });
+    });
+
+    function subscribe() {
+      OneSignal.push(function () {
+        OneSignal.showNativePrompt();
+      });
+    }
+  </script>
 </body>
 </html>
