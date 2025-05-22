@@ -20,7 +20,7 @@ const followRoutes = require('./src/routes/poetry/followRoutes');
 const labelRoutes = require('./src/routes/poetry/labelRoutes');
 const ujjwebRoutes = require('./src/routes/ujjwebRoutes/ujjwebRoutes')
 
-const startDailyNotificationJob = require('./scheduler/notificationJob');
+const startDailyNotificationJob = require('./src/scheduler/notification');
 
 const app = express();
 
