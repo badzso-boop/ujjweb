@@ -20,12 +20,19 @@ const followRoutes = require('./src/routes/poetry/followRoutes');
 const labelRoutes = require('./src/routes/poetry/labelRoutes');
 const ujjwebRoutes = require('./src/routes/ujjwebRoutes/ujjwebRoutes')
 
+const startDailyNotificationJob = require('./scheduler/notificationJob');
+
 const app = express();
+
+startDailyNotificationJob();
+
 app.use(express.json());
 const ujjwebBuildPath = path.join(__dirname, 'ujjweb', 'build');
 const poetryBuildPath = path.join(__dirname, 'poetry', 'build');
 const engineBuildPath = path.join(__dirname, 'engine');
+const napikupakBuildPath = path.join(__dirname, 'napikupak');
 const ujjandujjBuildPath = path.join(__dirname, 'ujandujj');
+
 
 const corsOptions = {
   origin: ['http://ujjweb.hu/poetry', 'http://www.ujjweb.hu/ujjweb', 'http://185.43.207.13:3069/', 'http://www.ujjweb.hu', 'http://185.43.207.13:3069/api/*', 'http://ujjweb.hu', 'http://localhost:3069', 'http://127.0.0.1:3069', 'http://www.ujjweb.hu/api'],
@@ -66,6 +73,11 @@ app.use('/api/ujjweb', ujjwebRoutes);
 app.use('/engine', express.static(engineBuildPath));
 app.get('/engine/', (req, res) => {
   res.sendFile(path.join(engineBuildPath, 'index.html'));
+});
+
+app.use('/napikupak', express.static(napikupakBuildPath));
+app.get('/napikupak/', (req, res) => {
+  res.sendFile(path.join(napikupakBuildPath, 'index.html'));
 });
 
 app.get('/ujjandujj/', (req, res) => {
