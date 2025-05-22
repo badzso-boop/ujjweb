@@ -79,6 +79,9 @@ app.use('/napikupak', express.static(napikupakBuildPath));
 app.get('/napikupak/', (req, res) => {
   res.sendFile(path.join(napikupakBuildPath, 'index.html'));
 });
+app.get('/OneSignalSDK.sw.js', (req, res) => {
+  res.sendFile(path.join(napikupakBuildPath, 'OneSignalSDK.sw.js'));
+});
 
 app.get('/ujjandujj/', (req, res) => {
   res.redirect('http://185.43.207.13/ujjandujj');
