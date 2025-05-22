@@ -1,0 +1,23 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background: #fff7e6;
+}
+
+.app {
+  max-width: 400px;
+  text-align: center;
+}
+
+button {
+  padding: 1rem 2rem;
+  background: #ff9900;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}

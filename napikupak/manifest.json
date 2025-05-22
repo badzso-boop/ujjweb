@@ -1,0 +1,9 @@
+{
+  "name": "Napi Kupak",
+  "short_name": "NapiKupak",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff7e6",
+  "theme_color": "#ff9900",
+  "description": "Minden reggel egy új motiváló gondolat"
+}
