@@ -11,7 +11,6 @@ const poetryPool = databases.poetry;
 const ujjwebPool = databases.ujjweb;
 const sciencePool = databases.science;
 
-// Feltételezzük, hogy a különböző routereket importálod
 const userRoutes = require('./src/routes/poetry/userRoutes');
 const poemRoutes = require('./src/routes/poetry/poemRoutes');
 const authRoutes = require('./src/routes/poetry/authRoutes');
@@ -71,6 +70,10 @@ app.get('/engine/', (req, res) => {
 
 app.get('/ujjandujj/', (req, res) => {
   res.redirect('http://185.43.207.13/ujjandujj');
+});
+
+app.get('/', (req, res) => {
+  res.redirect('/ujjweb');
 });
 
 const PORT = process.env.PORT || 3069;
