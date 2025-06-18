@@ -55,6 +55,16 @@ app.use('/timeline', createProxyMiddleware({
   changeOrigin: true,
 }));
 
+app.use('/_next', createProxyMiddleware({
+  target: 'http://185.43.207.13:4000/',
+  changeOrigin: true,
+}));
+
+app.use('/public', createProxyMiddleware({
+  target: 'http://185.43.207.13:4000/',
+  changeOrigin: true,
+}));
+
 app.use('/poetry', express.static(poetryBuildPath));
 app.get('/poetry/', (req, res) => {
   res.sendFile(path.join(poetryBuildPath, 'index.html'));
