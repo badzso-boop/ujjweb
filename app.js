@@ -58,6 +58,9 @@ app.use('/timeline', createProxyMiddleware({
 app.use('/_next', createProxyMiddleware({
   target: 'http://185.43.207.13:4000/',
   changeOrigin: true,
+  pathRewrite: {
+    '^/_next': '/_next', 
+  },
 }));
 
 app.use('/public', createProxyMiddleware({
