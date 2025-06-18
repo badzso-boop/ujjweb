@@ -4,7 +4,6 @@ const express = require('express');
 const session = require('express-session');
 const cors = require('cors');
 const path = require('path');
-const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const databases = require('./src/db');
 
@@ -48,24 +47,6 @@ app.use(session({
   secret: 'your-secret-key',
   resave: false,
   saveUninitialized: true
-}));
-
-app.use('/timeline', createProxyMiddleware({
-  target: 'http://185.43.207.13:4000/',
-  changeOrigin: true,
-}));
-
-app.use('/_next', createProxyMiddleware({
-  target: 'http://185.43.207.13:4000/',
-  changeOrigin: true,
-  pathRewrite: {
-    '^/_next': '/_next', 
-  },
-}));
-
-app.use('/public', createProxyMiddleware({
-  target: 'http://185.43.207.13:4000/',
-  changeOrigin: true,
 }));
 
 app.use('/poetry', express.static(poetryBuildPath));
